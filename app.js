@@ -15,9 +15,9 @@ let screenWidth; // Ширина контейнера.
 // Функция, которая считывает ширину контейнера и в зависмости от этого, задает кол-во карточек на странице слайдера.
 function init() {
 
-    slideWidth = slide.offsetWidth; // Ширина слайда
-    screenWidth = container.offsetWidth; // Ширина контейнера
-    console.log(screenWidth);
+    slideWidth = slide.offsetWidth; // Получаем ширину слайда
+    screenWidth = container.offsetWidth; // Получаем ширину контейнера
+    // console.log(screenWidth);
     if(screenWidth < 768) {
         visibleSlides = 1;
     }
@@ -30,7 +30,7 @@ function init() {
 
     // Задаем ширину слайдера в зависимости от кол-ва слайдов, показынных на странице
     slider.style.width = visibleSlides * slideWidth + 'px'; 
-    console.log(visibleSlides);
+    // console.log(visibleSlides);
 }
 
 init();
@@ -40,7 +40,7 @@ window.addEventListener('resize', init);
 function rollSlider() {
     // sliderLine.style.transform = "translateX(-960px)"
     sliderLine.style.transform = `translateX(-${count * slider.offsetWidth}px)`
-    console.log(`translateX = -${count * slider.offsetWidth}px`);
+    // console.log(`translateX = -${count * slider.offsetWidth}px`);
 }
 
 
@@ -51,8 +51,6 @@ nextBtn.addEventListener('click', () => {
         count = 0;
     }
     rollSlider();
-    console.log(count);
-    console.log(slides.length / visibleSlides);
 })
 
 prevBtn.addEventListener('click', () => {
@@ -62,7 +60,3 @@ prevBtn.addEventListener('click', () => {
     }
     rollSlider();
 })
-
-console.log(slides);
-console.log(slideWidth);
-console.log(slider);
