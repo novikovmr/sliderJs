@@ -61,7 +61,6 @@ nextBtn.addEventListener('click', () => {
         addFirstToEnd();
     }
     rollSlider();
-    console.log(count);
 })
 
 prevBtn.addEventListener('click', () => {
